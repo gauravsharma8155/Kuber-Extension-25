@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="downloadExcel">Download Excel</button>
+    <h2>this is a dummy extrension</h2>
+    <button type="button" id="sendMessage">sendMessage</button>
+    <button type="button" id="GetData">GetData</button>
+    <button type="button" id="getarray">PrintList</button>
+    <input type="file" name="Excel" id="input-file">  
+    <textarea name="" id="extractuserdata"></textarea>
+    <button id="btnextractdata">Extract Data</button>
+    <button id="checkdata" type="button">CheckData</button>
+    <div id="checkbox_data">
+        
+        
+        <label for="browseNode">Browse Node</label>
+        <input type="checkbox" id="browseNode" name="browseNode">
+        
+        <label for="title">Title</label>
+        <input type="checkbox" id="title" name="title">
+        
+        <label for="imageUrls">Image URLs</label>
+        <input type="checkbox" id="imageUrls" name="imageUrls">
+        
+        <label for="image">Image</label>
+        <input type="checkbox" id="image" name="image">
+        
+        <label for="rating">Rating</label>
+        <input type="checkbox" id="rating" name="rating">
+        
+        <label for="reviews">Reviews</label>
+        <input type="checkbox" id="reviews" name="reviews">
+        
+        <label for="storefrontLink">Storefront Link</label>
+        <input type="checkbox" id="storefrontLink" name="storefrontLink">
+        
+        <label for="genericName">Generic Name</label>
+        <input type="checkbox" id="genericName" name="genericName">
+        
+        <label for="variations">Variations</label>
+        <input type="checkbox" id="variations" name="variations">
+        
+        <label for="deal">Deal</label>
+        <input type="checkbox" id="deal" name="deal">
+        
+        <label for="soldBy">Sold By</label>
+        <input type="checkbox" id="soldBy" name="soldBy">
+        
+        <label for="bulletPointCount">Bullet Point Count</label>
+        <input type="checkbox" id="bulletPointCount" name="bulletPointCount">
+        
+        <label for="Description">Description</label>
+        <input type="checkbox" id="Description" name="Description">
+        
+        <label for="price">Price</label>
+        <input type="checkbox" id="price" name="price">
+        
+        <label for="mrp">MRP</label>
+        <input type="checkbox" id="mrp" name="mrp">
+        
+        <label for="brand">Brand</label>
+        <input type="checkbox" id="brand" name="brand">
+        
+        <label for="availability">Availability</label>
+        <input type="checkbox" id="availability" name="availability">
+        
+        <label for="videoAvailability">Video Availability</label>
+        <input type="checkbox" id="videoAvailability" name="videoAvailability">
+        
+        <button id="collect_btn" type="button" >CollectData</button>
+    </div>
+
+    <script src="popup.js"></script>
+    <script src="xlsx.full.min.js"></script>
+</body>
+</html>
