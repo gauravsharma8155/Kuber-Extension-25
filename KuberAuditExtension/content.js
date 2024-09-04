@@ -5,9 +5,9 @@ setTimeout(() => {
     let cuurent_url = location.href;
     if (cuurent_url.includes('dp')) {
         window.close();
-        chrome.runtime.sendMessage({ action: "closeTab" });  
+        chrome.runtime.sendMessage({ action: "closeTab" });
     }
-    
+
 }, 10000);
 const check_url = location.href;
 function getASIN(url) {
@@ -128,23 +128,19 @@ if (check_url.includes('dp')) {
     // VideoAvailability
     let videoAvailability = document.querySelector('li.videoThumbnail img') ? 'Available' : 'Not Available';
     setTimeout(() => {
-        console.log(check_url,asin);    
-        let main_url  = location.href;
+        console.log(check_url, asin);
+        let main_url = location.href;
         const collect_Asin = getASIN(main_url);
         console.log(collect_Asin, "collect_asin");
-
     }, 500);
     let send_obj
     if (maindatasin_val == asin) {
         send_obj = {
-            asin, Status, browseNode, title, imageUrls, image, rating, reviews, variations, deal, soldBy, bulletPointCount, Description, price, mrp, videoAvailability,genericName,imagecount
+            asin, Status, browseNode, title, imageUrls, image, rating, reviews, variations, deal, soldBy, bulletPointCount, Description, price, mrp, videoAvailability, genericName, imagecount
         }
     } else {
-        send_obj = { asin, Status }
+        send_obj = { asin, Status, reviews, rating }
     }
-    // const send_obj = {
-    //     asin, rating, reviews
-    // }
     console.log(send_obj);
 
 
