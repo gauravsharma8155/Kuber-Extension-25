@@ -1,6 +1,6 @@
 let mainarr = [];
 const checkboxStates = {};
-var getJsonData ;
+var getJsonData;
 
 document.getElementById("sendMessage").addEventListener("click", function () {
     console.log('hyyy');
@@ -52,7 +52,7 @@ document.getElementById("downloadExcel").addEventListener("click", () => {
     chrome.runtime.sendMessage({ greeting: "downloadexelsheet" }, function (response) {
         console.log("Response from background:", response);
     });
-})  
+})
 
 
 
@@ -68,7 +68,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         for (let i = 0; i < exel_sheet.length; i++) {
             let row = [
                 exel_sheet[i]?.asin,
-                exel_sheet[i]?.nSupressed, 
+                exel_sheet[i]?.nSupressed,
                 exel_sheet[i]?.browseNode,
                 exel_sheet[i]?.title,
                 exel_sheet[i]?.imageUrls,
@@ -92,7 +92,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         }
 
         // Insert header row
-        const header = ["Asin","nSupressed", "browseNode", "title","imageUrls", "image", "rating", "reviews", "variations", "deal", "soldBy", "bulletPointCount","Description", "price","mrp", "videoAvailability" ];
+        const header = ["Asin", "nSupressed", "browseNode", "title", "imageUrls", "image", "rating", "reviews", "variations", "deal", "soldBy", "bulletPointCount", "Description", "price", "mrp", "videoAvailability"];
         resultArray.unshift(header);
 
         const ws = XLSX.utils.aoa_to_sheet(resultArray);
@@ -162,11 +162,11 @@ function handleFile(event) {
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 // Add onclick event listener to each checkbox
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('click', function () {
-            console.log(`${this.id} is ${this.checked ? 'checked' : 'unchecked'}`);
-        });
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('click', function () {
+        console.log(`${this.id} is ${this.checked ? 'checked' : 'unchecked'}`);
     });
+});
 
 document.getElementById("collect_btn").addEventListener("click", () => {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -181,10 +181,8 @@ document.getElementById("collect_btn").addEventListener("click", () => {
 
     // Log the states to the console
     console.log(checkboxStates);
-    chrome.runtime.sendMessage({ greeting: "hello" , data:checkboxStates }, function (response) {
+    chrome.runtime.sendMessage({ greeting: "hello", data: checkboxStates }, function (response) {
         console.log("Response from background:", response);
     });
-
-    
-})
+});
 
